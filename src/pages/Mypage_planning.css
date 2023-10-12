@@ -1,0 +1,43 @@
+      #myplanning h4{
+      font-size: 35px;
+      text-align: center;
+      margin-bottom: 50px;
+}
+
+#myplanning  h4::after{
+      content: "";
+      display: block;
+      background-color: lightgray;
+      width: 197px; height: 1px;
+      margin: 16px auto;
+}
+
+.myplan a{
+      display: block;
+      font-size: 24px;
+      margin: 25px auto;
+      width: 860px; height: 88px;
+      padding:0 20px;
+      line-height: 86px;
+      border: dashed 1px;
+      border-color: rgb(183, 183, 183);
+      text-align: 86px;
+}
+
+.myplan a::before{
+      content: "";
+      display: block;
+      float: left;
+      width: 40px; height: 40px;
+      margin-top: 20px;
+      margin-left: 32px;
+      margin-right: 18px;
+      background: url(../../public/images2/plan.png) no-repeat center/100%;
+}
+
+.myplan span{
+      display: block;
+      width: 924px; height: 1px;
+      background-color: lightgray;
+      margin: 0 auto;
+}

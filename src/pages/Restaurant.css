@@ -1,0 +1,396 @@
+*{box-sizing: border-box;}
+
+ul{list-style: none; padding-left: 0px;}
+img{border: none;}
+#restaurant span, #review_check span{
+      width: 100%; 
+      height: 1px; 
+      background-color: lightgray;
+      display: block;
+}
+
+.inner {
+      width: 70%;
+  }
+
+
+#restaurant .btn {
+      align-items: center;
+      margin: 0;
+      width: 105px;
+      height: 38px;
+      border-radius: 50px;
+      background-color: lightgray !important;
+      color: gray !important;
+      padding: 0;
+      display: block;
+}
+
+
+  
+#restaurant .btn:hover {
+      background-color: #FFB0B0 !important;
+      color: white !important;
+}
+
+
+/* 상단 이미지 */
+#restaurant_visual{
+      width: 100%;
+      height: 350px;
+      background: url(../../public/images2/restaurant.jpg) no-repeat center/cover;
+      margin-bottom: 68px;
+}
+
+
+#restaurant {
+      float: left;
+      width: 60%;
+      height: 745px;
+      margin-right: 0.322%;
+}
+
+
+/* 타이틀 */
+#restaurant_title{
+      padding-left: 23px;
+      width: 100%;
+      height: 57px;
+}
+
+
+#restaurant_title h4{
+      font-size: 36px;
+      margin-right: 10px;
+      float: left;
+}
+
+#restaurant_title #star_rating {
+      height: 57px;
+      font-size: 30px;
+      float: left;
+}
+
+#restaurant_title button{
+      float: right;
+      border-radius: 30px;
+      margin-top: 8px;
+
+}
+
+
+#restaurant_subtitle{
+      float: left;
+      padding-left: 23px;
+      width: 100%;
+      height: 40px;
+}
+#restaurant_subtitle h5{
+      font-size: 20px;
+      float: left;
+}
+
+#restaurant_subtitle p{
+      float: right;
+      margin-left: 15px;
+}
+#restaurant_subtitle img{
+      width: 15px; height: 15px;
+      margin-right: 5px;
+}
+
+
+
+
+/* 상세내용 */
+#restaurant_info span{
+      width: 100%;
+      height: 1px; 
+      background-color: gray;
+      display: block;
+      clear: both;
+}
+
+#restaurant_info ul{
+      padding: 0;
+      margin: 0;
+}
+
+#restaurant_info li{
+      width: 100%;
+      line-height: 42px;
+      font-size: 14px;
+}
+
+
+
+#restaurant_info ul>li>p{
+      display: inline-block;
+      margin: 0;
+}
+#restaurant_info > ul>li>p:nth-of-type(1){
+      float: left;
+      margin-bottom: 0px;
+      width: 26%;
+      background-color: #FFDDD0;
+      text-align: center;
+}
+#restaurant_info > ul>li>p:nth-of-type(2){
+      width: 68%;
+      margin-left: 30px;
+}
+#restaurant_info > ul>li::after{
+      content: "";
+      display: block;
+      background-color: #e8e8e8;
+      width: 100%;
+      height: 1px;
+}
+
+
+
+#restaurant_menu > p:nth-of-type(1) {
+      margin: 0;
+      width: 26%; height: 430px;
+      background-color: #FFDDD0;
+      text-align: center; font-size: 14px;
+      line-height: 42px;
+      float: left;
+      margin-right: 30px;
+}
+#restaurant_menu > ul {
+      padding-top: 3px;
+}
+#restaurant_menu > ul>li>p:nth-of-type(2){
+      float: right;
+      margin-right: 26px;
+}
+
+
+#restaurant_menu > a {
+      display: block;
+      font-size: 14px;
+      color: #3f3f3f;
+      margin-top: 26px;
+      margin-left: 26%;
+      cursor: pointer;
+}
+#restaurant_menu > a > div {
+      width: 18px; height: 18px;
+      position: relative;
+      top: -18px;
+      margin-left: 80px;
+
+      
+      background-color: aquamarine;
+      background: url(../../public/images2/plus\ \(1\).png) no-repeat center/cover;
+}
+
+
+
+
+
+/* 지도 */
+#map{
+      float: right;
+      width: 35%;
+      height: 400px;
+      background-color: #FFB0B0;
+}
+
+
+
+
+/* 리뷰작성 */
+#review_write{
+      padding-top: 28px;
+      clear: both;
+}
+#review_write  h5{
+      font-size: 24px;
+}
+
+#review_box{
+      width: 100%;
+      height: 240px;
+      border-style: solid;
+      border-width: 1px;
+      border-color: black;
+      padding: 13px 23px;
+}
+
+#rating {
+      float: left;
+      font-size: 20px;
+      line-height: 25px;
+      margin-right: 10px;
+}
+
+#review_box button{
+      width: 120px;
+      height: 25px;
+      border-radius: 15px;
+      font-size: 12px;
+      line-height: 12px;
+      float: left;
+      margin: 0;
+      margin-left: 13px ;
+}
+
+#review_box p{
+      color: #b7b7b7;
+      font-size: 14px;
+      text-align: left;
+}
+
+#review_box>div>p{
+      height: 24px;
+      line-height: 25px;
+      font-size: 12px;
+      margin-left: 21px;
+      float: left;
+}
+
+#review_box textarea{
+      width: 100%;
+      height: 160px;
+      clear: both;
+      margin-top:10px;
+      border: none;
+      vertical-align: top;
+      font-size: 14px;
+      line-height: 14px;
+      resize: none;
+}
+#review_box textarea:focus{
+      border: none;
+}
+
+#review_box .line{
+      width: 100%;
+      height: 1px;
+      background-color: #b7b7b7;
+      margin-top: 34px;
+      clear: both;
+      
+}
+
+#review_write>button{
+      width: 118px;
+      height: 42px;
+      margin-top: 14px;
+      margin-right: 7px;
+      float: right;
+      border-radius: 35px;
+}
+
+
+/* 리뷰 확인 */
+#review_check{
+      margin-top: 92px;
+      margin-bottom: 138px;
+}
+
+.review_index > div{
+      width: 100%;
+      position: relative;
+      display: block;
+      float: left;
+}
+.review_index{
+      padding: 13px 0;
+      clear: both;
+      overflow: hidden;
+}
+
+.review_index > div:nth-of-type(1){
+      width: 9.1%;
+      height: 112px;
+}
+.review_index > div:nth-of-type(2){
+      width: 64.5%;
+      margin: 0 3.629%;
+}
+
+.review_index h6{
+      font-size: 16px;
+      float: left;
+      margin-right: 15px;
+}
+
+.review_index > div:nth-of-type(2)>div>p{
+      font-size: 12px;
+      line-height: 16px;
+}
+
+.review_index #star_rating{
+      font-size: 14px;
+      float: left;
+      margin-right: 10px;
+}
+
+.review_index > div:nth-of-type(2)>div>div{
+      width: 108px;
+      height: 22px;
+      background-color: #d9d9d9;
+      float: left;
+      margin-right: 13px;
+      margin-bottom: 6px;
+      border-radius: 10px;
+      font-size: 12px; text-align: center;
+}
+.review_index > div:nth-of-type(2)>div{
+      clear: both;
+}
+.review_index > div:nth-of-type(2)>p{
+      clear: both;
+      font-size: 14px;
+      padding-top: 10px;
+}
+
+.review_index > div:nth-of-type(3){
+      width: 19.1%;
+      height: 215px;
+}
+
+
+.review_index span{
+      width: 100%; 
+      height: 1px; 
+      background-color: lightgray;
+      display: block;
+      clear: both;
+      position: relative;
+      top: 13px;
+}
+
+
+/* 이미지 임시색 */
+.review_index img{
+      width: 100%;
+      height: 100%;
+      border-radius: 30px;
+      /* background-color: aquamarine; */
+      background-size: cover;
+      background-position: center;
+}
+
+
+#review_check > a{
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin: 13px auto;
+      position: relative;
+      cursor: pointer;
+      /* background-color: aquamarine; */
+}
+#review_check a > div{
+      position: relative;
+      width: 18px; height: 18px;
+      top : -20px;
+      left: 50%; margin-left: 30px;
+      background-color: aquamarine;
+      background: url(../../public/images2/plus\ \(1\).png) no-repeat center/cover;
+
+}

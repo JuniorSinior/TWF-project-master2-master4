@@ -1,0 +1,69 @@
+#myreview h4{
+      font-size: 35px;
+
+      text-align: center;
+}
+
+#myreview  h4::after{
+      content: "";
+      display: block;
+      background-color: lightgray;
+      width: 197px; height: 1px;
+      margin: 16px auto;
+}
+
+#myreview > h5{
+      font-size: 24px;
+      line-height: 24px;
+}
+#myreview h5::after{
+      content: " ";
+      display: block;
+      background-color: lightgray;
+      width: 100%; height: 1px;
+      margin-top: 10px;
+}
+
+
+#myreview .review_index > div:nth-of-type(1){
+      display: none;
+}
+
+#myreview .review_index > div:nth-of-type(2){
+      width: 77.229%;
+      margin: 0;
+      margin-right:3.629%;
+}
+
+
+
+#myreview .review_index > div > div > p{
+      float: left;
+}
+
+
+#myreview .review_index #review_fix {
+      font-size: 12px;
+      font-weight: normal;
+      line-height: 16px;
+      width: 23px;
+      float: left;
+      margin: 0 6px;
+      color: gray;
+}
+#myreview .review_index #review_del {
+      font-size: 12px;
+      font-weight: normal;
+      line-height: 16px;
+      width: 23px;
+      color: gray;
+}
+#review_fix:hover, #review_del:hover{
+      text-decoration: underline;
+}
+
+
+
+#myreview {
+      padding-bottom: 150px;
+}

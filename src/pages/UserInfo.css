@@ -1,0 +1,15 @@
+.user-img{
+    width: 100px;
+}
+
+#th {
+    width: 100px;
+    padding: 2%;
+    background-color: rgb(240, 240, 240);
+    border-top: solid lightgray 1px;
+}
+
+#td {
+    padding: 2%;
+    border-top: solid lightgray 1px;
+}

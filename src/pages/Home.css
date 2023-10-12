@@ -1,0 +1,67 @@
+.tag {
+    margin-left: 21%;
+}
+
+.tc {
+    text-align: center;
+}
+
+.square-fimg {
+    width: 14%;
+    border-radius: 30px;
+    margin-left: 1%;
+}
+
+.bigrec-fimg {
+    width: 10vw;
+    border-radius: 30px;
+    margin-top: 2%;
+}
+
+.smlrec-fimg {
+    width: 10vw;
+    border-radius: 30px;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
+
+.banner-img {
+    width: 100%;
+    margin-bottom: 1%;
+}
+
+.loupe-size {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.searchtxt {
+    border-radius: 30px;
+    border: solid #FFB0B0;
+    outline: none;
+    font-size: 95%;
+    width: 40vw;
+    height: 6vh;
+    padding: 0em 2em;
+    margin-bottom: 1%;
+    /* margin-left: 18%; */
+}
+
+.searchbtn {
+    background-color: #FFB0B0;
+    border: none;
+    border-radius: 30px;
+    margin-left: 1vw;
+    width: 5vw;
+    height: 6vh;
+    margin-bottom: 1%;
+}
+
+/* .big {
+    margin: 1em;
+}
+
+.small {
+    margin: 1em;
+} */

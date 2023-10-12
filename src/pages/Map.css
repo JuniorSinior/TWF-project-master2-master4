@@ -1,0 +1,85 @@
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url(arrow.png);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+}
+select::-ms-expand{display: none;}
+
+.map {
+    margin: 1em;
+}
+
+.list-info {
+    margin-bottom: 4%;
+    align-items: center;
+}
+
+.schedule-list {
+    margin: 1em;
+}
+
+.slectbox {
+    color: #FFB0B0;
+    font-size: 75%;
+    text-align: left;
+    outline: none;
+    width: 8vw;
+    border-color: #B0B0B0;
+    padding: 0.4em;
+    box-shadow: 1px 1px 1px 1px lightgray;
+}
+
+.edit-btn {
+    float: right;
+    border-radius: 20px;
+    border: none;
+    font-size: 95%;
+    text-align: center;
+    background-color: #D9D9D9;
+    padding: 0.2em;
+    width: 4vw;
+}
+
+/* .edit-btn:hover {
+    background-color: #FFB0B0;
+    color: white;
+} */
+
+.filter-btn {
+    margin-left: 22.5%;
+    background: none;
+    border: none;
+}
+
+.filter-content-btn {
+    background-color: #dddddd;
+    margin-left: 2%;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 10px 5px 10px;
+    width: 6vw;
+}
+
+.filter-content-btn:active {
+    background-color: #FFB0B0;
+}
+
+.transfer-btn {
+    border: none;
+    background-color: #FFD0D0;
+    border-radius: 20px;
+    height: 5vh;
+    width: 7vw;
+    margin-left: 44%;
+}
+
+.list-box {
+    border: 1px solid;
+    width: 300px;
+    height: 300px;
+    padding: 10%;
+    box-shadow: 1px 1px 1px 1px lightgray;
+}
