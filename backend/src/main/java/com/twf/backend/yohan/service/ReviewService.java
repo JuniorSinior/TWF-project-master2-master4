@@ -30,7 +30,6 @@ public class ReviewService {
     public void addReview(ReviewDTO reviewDTO) {
         MemberEntity user = memberRepository.findById(reviewDTO.getUserId()).orElse(null);
 
-        // 변경: restaurantId 대신 restaurantName을 사용하여 음식점을 찾음
         RestaurantEntity restaurant = restaurantRepository.findByTitle(reviewDTO.getRestaurantName()).orElse(null);
 
         if (user == null || restaurant == null) {
