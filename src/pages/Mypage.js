@@ -18,7 +18,7 @@ function Mypage(props) {
                 <div><Link to='/mypage_planning'>내 여행계획</Link></div>
                 <div><Link to='/mypage_review'>리뷰관리</Link></div>
                 {/*<div><Link to='/mypage_favorite'>내 관심가게</Link></div>*/}
-                <dlv><NavLink activeClassName='active' to='/mypage_favorite'>내 관심가게</NavLink></dlv>
+                <div><NavLink activeClassName='active' to='/mypage_favorite'>내 관심가게</NavLink></div>
             </div>
 
 

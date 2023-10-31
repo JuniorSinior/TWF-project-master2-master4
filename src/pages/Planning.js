@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
+import Planswiper from '../components/Planswiper';
 import './style.css';
 import './Planning.css';
 
@@ -22,19 +23,29 @@ function Planning(props) {
     const [value, onChange] = useState(new Date());
 
     const [modalIsOpen, setModalIsOpen] = useState(false);
+    
 
     //날짜 선택
     // let setStartMonth=0;
     let setStartMonth;
     let setStartDate;
     
+
+
     const onClickComplete = (event) => {
         setStartMonth =  value.getMonth()+1;
         setStartDate =  value.getDate();
         
-        
         console.log(setStartMonth);
         console.log(setStartDate);
+
+        
+        settest((prevState)=>{
+            return{ ...prevState, dateM:setStartMonth}
+        });
+        settest((prevState)=>{
+            return{ ...prevState, dateD:setStartDate}
+        });
 
     }
 
@@ -47,13 +58,58 @@ function Planning(props) {
     let end_time_m;
     let schedule;
     let kategorie;
+
+    const [test, settest] = useState({
+        info1: '',
+        info2: '',
+        info3: '',
+        info4: '',
+        info5: '',
+        info6: '',
+        info7: '',
+        dateM:'',
+        dateD:'',
+    });
     
     const putIn = () => {
         console.log("putin");
-        console.log(setStartMonth);
+        console.log(day);
+        console.log(start_time_h);
+        console.log(start_time_m);
+        console.log(end_time_h);
+        console.log(end_time_m);
+        console.log(schedule);
+        console.log(kategorie);
         console.log(setStartDate);
+
+
+        settest((prevState)=>{
+            return{ ...prevState, info1:day}
+        });
+        settest((prevState)=>{
+            return{ ...prevState, info2:start_time_h}
+        });
+        settest((prevState)=>{
+            return{ ...prevState, info3: start_time_m}
+        });
+        settest((prevState)=>{
+            return{ ...prevState, info4: end_time_h}
+        });
+        settest((prevState)=>{
+            return{ ...prevState, info5: end_time_m}
+        });
+        settest((prevState)=>{
+            return{ ...prevState, info6: schedule}
+        });
+        settest((prevState)=>{
+            return{ ...prevState, info7: kategorie}
+        });
     };
 
+    
+    const setAddDay = (event) => {
+        day=event;
+    }
     const onselectStartHour = (event) => {
         start_time_h=event.target.value;
     }
@@ -66,20 +122,16 @@ function Planning(props) {
     const onselectEndMinute = (event) => {
         end_time_m=event.target.value;
     }
-    
-    const setAddDay = (event) => {
-        day=event;
-    }
-
     const setAddSchedule = event =>{
         schedule=event.target.value;
     }
-
     const setAddKategorie = (event) => {
         kategorie=event;
     }
 
 
+ 
+    
 
 
 
@@ -104,668 +156,9 @@ function Planning(props) {
    
 
                 <div id='plan'>
-                    <form>
-                        <input type="text" maxlength = "10" placeholder='여행일정표'></input>
-                    </form>
                     
-                    {/* <div>
-                            <table class="tg">
-                                <thead>
-                                <tr>
-                                    <th class="tg-th-1" colspan="2">0/00 (요일)</th>
-                                    <th class="tg-th-2">장소</th>
-                                    <th class="tg-th-3">분류</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">1</td>
-                                    <td class="tg-td">시간</td>
-                                    <td class="tg-td">일정</td>
-                                    <td class="tg-td">♥</td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">2</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">3</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">4</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">5</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">6</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">7</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">8</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">9</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">10</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">11</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">12</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">13</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">14</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">15</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">16</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">17</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">18</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">19</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">20</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">21</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">22</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">23</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">24</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                    </div> */}
 
-                    <div className='plan_swiper' >
-                            
-
-                    <>
-                    
-                    <Swiper
-                        slidesPerView={2}
-                        spaceBetween={20}
-                        pagination={{clickable: true,}}
-
-                        slidesOffsetBefore={350}
-                        centeredSlides={true}
-
-                        slideToClickedSlide = {true}
-
-                        modules={[Pagination]}
-                        className="mySwiper"
-                    >
-                        <SwiperSlide>
-                            <div>
-                            <table class="tg">
-                                <thead>
-                                <tr>
-                                    <th class="tg-th-1" colspan="2">{setStartMonth}/{setStartDate} (요일)</th>
-                                    <th class="tg-th-2">장소</th>
-                                    <th class="tg-th-3">분류</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">1</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">2</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">3</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">4</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">5</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">6</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">7</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">8</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">9</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">10</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">11</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">12</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">13</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">14</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">15</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">16</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">17</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">18</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">19</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">20</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">21</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">22</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">23</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">24</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div>
-                            <table class="tg">
-                                <thead>
-                                <tr>
-                                    <th class="tg-th-1" colspan="2">0/00 (요일)</th>
-                                    <th class="tg-th-2">장소</th>
-                                    <th class="tg-th-3">분류</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">1</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">2</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">3</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">4</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">5</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">6</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">7</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">8</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">9</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">10</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">11</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">12</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">13</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">14</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">15</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">16</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">17</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">18</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">19</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">20</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">21</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">22</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">23</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">24</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                        <div>
-                            <table class="tg">
-                                <thead>
-                                <tr>
-                                    <th class="tg-th-1" colspan="2">0/00 (요일)</th>
-                                    <th class="tg-th-2">장소</th>
-                                    <th class="tg-th-3">분류</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">1</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">2</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">3</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">4</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">5</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">6</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">7</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">8</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">9</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">10</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">11</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">12</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">13</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">14</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">15</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">16</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">17</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">18</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">19</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">20</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">21</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">22</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">23</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                <tr>
-                                    <td class="tg-td, tg-td-1">24</td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                    <td class="tg-td"></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            </div>
-                        </SwiperSlide>
-                        
-                    </Swiper>
-                    </>
-
-                    </div>
+                    <Planswiper test={test}></Planswiper>
 
                     <button onClick={()=> setModalIsOpen(true)} className='btn'>일정 추가하기</button>
                     <Modal 
@@ -818,16 +211,16 @@ function Planning(props) {
                             <div className='start_time'>
                                 <select onChange={onselectStartHour} 
                                 name='start_time' className='choicebox'>
-                                    <option value="00">00시</option>
-                                    <option value="01">01시</option>
-                                    <option value="02">02시</option>
-                                    <option value="03">03시</option>
-                                    <option value="04">04시</option>
-                                    <option value="05">05시</option>
-                                    <option value="06">06시</option>
-                                    <option value="07">07시</option>
-                                    <option value="08">08시</option>
-                                    <option value="09">09시</option>
+                                    <option value="0">00시</option>
+                                    <option value="1">01시</option>
+                                    <option value="2">02시</option>
+                                    <option value="3">03시</option>
+                                    <option value="4">04시</option>
+                                    <option value="5">05시</option>
+                                    <option value="6">06시</option>
+                                    <option value="7">07시</option>
+                                    <option value="8">08시</option>
+                                    <option value="9">09시</option>
                                     <option value="10">10시</option>
                                     <option value="11">11시</option>
                                     <option value="12">12시</option>
@@ -844,7 +237,7 @@ function Planning(props) {
                                     <option value="23">23시</option>
                                 </select>
                                 <select onChange={onselectStartMinute} name='start_time' className='choicebox'>
-                                    <option value="00">00분</option>
+                                    <option value="0">00분</option>
                                     <option value="10">10분</option>
                                     <option value="20">20분</option>
                                     <option value="30">30분</option>
@@ -899,9 +292,9 @@ function Planning(props) {
                         </div>
                         <div>
                             <p>분류</p>
-                            <button onClick={()=> setAddKategorie('car')}><img src='images2/car.png' alt=''></img></button>
+                            <button onClick={()=> setAddKategorie('traffic')}><img src='images2/car.png' alt=''></img></button>
                             <button onClick={()=> setAddKategorie('food')}><img src='images2/food.png' alt=''></img></button>
-                            <button onClick={()=> setAddKategorie('beach')}><img src='images2/beach-chair.png' alt=''></img></button>
+                            <button onClick={()=> setAddKategorie('tour')}><img src='images2/beach-chair.png' alt=''></img></button>
                         </div>
                         <button id='put_in_btn' 
                         onClick={() =>{ setModalIsOpen(false); putIn()}}
