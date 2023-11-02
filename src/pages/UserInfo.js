@@ -4,6 +4,7 @@ import './style.css';
 import './UserInfo.css';
 
 function UserInfo(props) {
+
     return (
         <div>
             <Navbar />

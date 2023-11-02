@@ -43,7 +43,7 @@ function Home() {
                     <div className='content'>
                         <p className='tc'>
                             <input type='text' placeholder='검색어 입력' className='searchtxt'></input>
-                            <button type='button' className='searchbtn'>
+                            <button type='button' className='searchbtn' onClick={() => navigate('/map')}>
                                 <img src='images/loupe.png' alt='검색' className='loupe-size'></img>
                             </button>
                         </p>
@@ -55,7 +55,7 @@ function Home() {
                                 {restaurants.map((restaurant) => (
                                     <img
                                         key={restaurant.id}
-                                        src={restaurant.image_url}
+                                        src={restaurant.id.image_url}
                                         className='square-fimg'
                                         alt={restaurant.title}
                                         onClick={() => handleRestaurantClick(restaurant.id)}
@@ -66,14 +66,14 @@ function Home() {
                     </div>
                 </div>
                 <div className='user-status'>
-                    {user ? (
-                        <div>
-                            <p>{`${user.name} 환영합니다.`}</p>
-                            <button onClick={handleLogout}>로그아웃</button>
-                        </div>
-                    ) : (
-                        <Link to='/login'>로그인</Link>
-                    )}
+                    {/*{user ? (*/}
+                    {/*    <div>*/}
+                    {/*        <p>{`${user.name} 환영합니다.`}</p>*/}
+                    {/*        <button onClick={handleLogout}>로그아웃</button>*/}
+                    {/*    </div>*/}
+                    {/*) : (*/}
+                    {/*    <Link to='/login'>로그인</Link>*/}
+                    {/*)}*/}
                 </div>
             </div>
         </div>

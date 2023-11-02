@@ -46,10 +46,8 @@ function Login() {
                     <input type='password' placeholder='비밀번호' className='txtbox' onChange={e => setPassword(e.target.value)} />
                 </div>
                 <div className='txt'>
-                    <Link to='/signup'>회원가입</Link>
-                    <span style={{ marginLeft: '70%' }}>
-                        <Link to='/password-modify'>비밀번호</Link> 찾기
-                    </span>
+                    <Link to='/signup'>회원가입</Link>·
+                        <Link to='/password-modify'>비밀번호 찾기</Link>
                 </div>
                 <button type='submit' className='btn' onClick={handleLogin}>로그인</button>
             </div>

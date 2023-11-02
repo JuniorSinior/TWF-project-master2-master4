@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
@@ -27,6 +27,11 @@ export function AuthProvider({ children }) {
         user,
         login,
         logout,
+    };
+
+    const handleLogout = () => {
+        logout();
+
     };
 
     return <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>;
